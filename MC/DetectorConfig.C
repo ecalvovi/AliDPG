@@ -451,7 +451,9 @@ DetectorInit()
   if (iAD){
     //=================== AD parameters ============================
 
-    AliAD *AD = new AliADv1("AD", "normal AD");
+    AliAD *AD = NULL;
+    if (year>0) AD = new AliADv1("AD", Form("normal AD year=%d", year));
+    else        AD = new AliADv1("AD", "normal AD");
   }         
   
 }
